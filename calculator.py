@@ -14,12 +14,21 @@ def divide(a, b):
         raise ValueError("Division by zero is not allowed")
     return a / b
 
+def power(a, b):
+    return a ** b
+
+def modulo(a, b):
+    if b == 0:
+        raise ValueError("Modulo by zero is not allowed")
+    return a % b
+
 def main():
     print("Simple Calculator")
     a = float(input("First number: "))
-    op = input("Operation (+, -, *, /): ")
+    op = input("Operation (+, -, *, /, ^, %): ")
     b = float(input("Second number: "))
-    ops = {"+": add, "-": subtract, "*": multiply, "/": divide}
+    ops = {"+": add, "-": subtract, "*": multiply, "/": divide,
+           "^": power, "%": modulo}
     print("Result:", ops[op](a, b))
 
 if __name__ == "__main__":
